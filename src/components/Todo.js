@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 export default class Todo extends Component {
   static propTypes = {
-    tutle: PropTypes.string
+    title: PropTypes.string
   };
 
   static defaultProps = {
