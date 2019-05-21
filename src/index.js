@@ -1,16 +1,20 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import './config/ReactotronConfig';
 
-import Todo from "./components/Todo";
+import React, { Component } from 'react';
+import { StyleSheet, View, Button } from 'react-native';
+
+import Todo from './components/Todo';
+
+console.tron.log('Hello');
 
 export default class App extends Component {
   state = {
-    todos: ["Fazer café", "Estudar react native"]
+    todos: ['Fazer café', 'Estudar react native'],
   };
 
-  // addTodo = () => {
-  //   this.setState({ todos: [...todos, "dormir"] });
-  // };
+  addTodo = () => {
+    this.setState({ todos: [...this.state.todos, 'dormir'] });
+  };
 
   render() {
     return (
@@ -18,7 +22,7 @@ export default class App extends Component {
         {this.state.todos.map(todo => (
           <Todo title={todo} key={Math.random()} />
         ))}
-        {/* <Button title="Adicionar todo" />) */}
+        <Button title="Adicionar todo" onPress={this.addTodo} />
       </View>
     );
   }
@@ -27,8 +31,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f5f5"
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
 });
