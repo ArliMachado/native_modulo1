@@ -1,9 +1,10 @@
-import './config/ReactotronConfig';
+import './src/config/ReactotronConfig';
+import './src/config/DevToolsConfig';
 
 import React, { Component } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import Todo from './components/Todo';
+import Todo from './src/components/Todo';
 
 console.tron.log('Hello');
 
@@ -19,10 +20,8 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.todos.map(todo => (
-          <Todo title={todo} key={Math.random()} />
-        ))}
-        <Button title="Adicionar todo" onPress={this.addTodo} />
+        <Todo title="Fazer café" />
+        <Todo title="Estudar goNative" />
       </View>
     );
   }
@@ -31,8 +30,10 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#333',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
   },
 });

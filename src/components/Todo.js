@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from 'react-native';
 
 const Todo = ({ title }) => (
   <View>
@@ -10,11 +10,11 @@ const Todo = ({ title }) => (
 );
 
 Todo.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 Todo.defaultProps = {
-  title: "Todo padrão"
+  title: 'Todo padrão',
 };
 
 const styles = StyleSheet.create({});
